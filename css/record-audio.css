@@ -1,0 +1,324 @@
+.record-area{
+    position: fixed !important;
+    top: 16% !important;
+    left: 33% !important;
+    background: #fff !important;
+    border: 2px solid red !important;
+    border-radius: 5px !important;
+    min-width: 490px !important;
+    min-height: 400px !important;
+    z-index: 2 !important;
+    content: " " !important;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.record-area{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.record-area .upload-header{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 100% !important;
+    padding-left: 20px !important;
+}
+
+.record-area .upload-header h3{
+    /* font-family: 'Bree Serif', serif !important; */
+    /* font-family: 'Edu VIC WA NT Beginner', cursive !important; */
+    font-family: 'Lobster', cursive !important;
+    /* font-family: 'Mochiy Pop One', sans-serif !important; */
+    /* font-family: 'Rajdhani', sans-serif !important; */
+    /* font-family: 'Righteous', cursive !important; */
+    /* font-family: 'Satisfy', cursive !important; */
+    font-size: 2em !important;
+}
+
+.record-area .file-upload-form{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-evenly !important;
+    min-width: 100% !important;
+    padding-left: 20px !important;
+}
+
+#file-upload-form{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    min-width: 100% !important;
+    min-height: 200px !important;
+}
+
+#file-upload-form .choose-project-div{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 100% !important;
+}
+
+.choose-project-div select{
+    text-decoration: none !important;
+    outline: none !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    min-width: 150px !important;
+}
+
+.choose-project-div .or-divider{
+    margin: 0 10px !important;
+}
+
+.choose-project-div button{
+    background: #f20732 !important;
+    color: #FFFFFF !important;
+    border: 2px solid #f20732 !important;
+    min-width: 150px !important;
+    text-decoration: none !important;
+    outline: none !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    font-family: 'Rajdhani', sans-serif !important;
+    font-size: 1.1em !important;
+    font-weight: 400 !important;
+}
+
+#file-upload-form .project-create{
+    display: flex;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 100% !important;
+}
+
+#file-upload-form .project-create input{
+    margin: 10px !important;
+    padding: 5px !important;
+}
+
+#file-upload-form .record-audio{
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 100% !important;
+}
+
+.record-audio #audio-mic{
+    display: flex !important;
+    flex-direction: row !important;
+    background: transparent !important;
+    border: none !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-width: 200px !important;
+}
+
+.record-audio #audio-mic .button-logo{
+    content: url('./icons/Voisascript\ 2-2.png') !important;
+    height: 30px !important;
+    width: 30px !important;
+    border-radius: 50% !important;
+    /* border: 1px solid #eeeeee !important; */
+    margin-right: 15px !important;
+}
+
+.record-audio #audio-mic p{
+    margin-right: 15px !important;
+    color: #f20732;
+}
+
+.record-audio .animated-bars{
+    margin: 0 10px !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    height: 30px !important;
+    width: 40pt !important;
+}
+
+.bar{
+    height: 10px !important;
+    width: 4px !important;
+    background: #91908b !important;
+    margin: 2px !important;    
+}
+
+@keyframes upDown {
+    0%{height: 5px !important;}
+    50%{height: 15px !important;}
+    100%{height: 5px !important;}
+}
+
+.up-down{
+    animation-name: upDown !important;
+    animation-duration: 0.60s !important;
+    animation-iteration-count: infinite !important;
+}
+
+.bar:nth-child(2){
+    animation-delay: 0.12s !important;
+}
+
+.bar:nth-child(3){
+    animation-delay: 0.24s !important;
+}
+
+.bar:nth-child(4){
+    animation-delay: 0.08s !important;
+}
+
+.bar:nth-child(5){
+    animation-delay: 0.36s !important;
+}
+
+.bar:nth-child(6){
+    animation-delay: 0.48s !important;
+}
+
+.record-audio #save-button{
+    background: #0c39cc !important;
+    color: #FFFFFF !important;
+    border: 2px solid #0c39cc !important;
+    min-width: 150px !important;
+    text-decoration: none !important;
+    outline: none !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    font-family: 'Rajdhani', sans-serif !important;
+    font-size: 1.1em !important;
+    font-weight: 400 !important;
+}
+
+.record-audio #save-button:disabled{
+    border: 2px solid #4361c2 !important;
+    background: #4361c2 !important;
+    color: #c6ebd2 !important;
+    text-decoration: none !important;
+    outline: none !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    font-family: 'Rajdhani', sans-serif !important;
+    font-size: 1.1em !important;
+    font-weight: 400 !important;
+}
+
+.file-holder{
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 100% !important;
+    min-height: 100px !important;
+}
+
+.file-holder .choose-file-btn{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 10px !important;
+    text-align: center !important;
+    background: #f20732 !important;
+    color: #FFFFFF !important;
+    border: 2px solid #f20732 !important;
+    min-width: 150px !important;
+    text-decoration: none !important;
+    outline: none !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    font-family: 'Rajdhani', sans-serif !important;
+    font-size: 1.1em !important;
+    font-weight: 400 !important;
+}
+
+.file-holder .choose-file-btn p{
+    margin: 0 10px !important;
+    font-style: italic !important;
+    font-weight: 500 !important;
+}
+
+.file-holder .upload-btn{
+    background: #14ae5c !important;
+    color: #FFFFFF !important;
+    border: 2px solid #14ae5c !important;
+    min-width: 150px !important;
+    text-decoration: none !important;
+    outline: none !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    font-family: 'Rajdhani', sans-serif !important;
+    font-size: 1.1em !important;
+    font-weight: 400 !important;
+}
+
+.file-holder .choose-file-error{
+    background: #eb3d3d !important;
+    color: #FFFFFF !important;
+    min-width: fit-content !important;
+    padding: 10px 5px !important;
+    margin: 0 5px !important;
+}
+
+.record-area .file-link-area{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-block: 20px !important;
+}
+
+.record-area .file-link-area .copy-paste-div{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.record-area .file-link-area .copy-paste-heading{
+    margin-bottom: -10px !important;
+}
+
+.record-area .file-link-area .copy-paste-div button{
+    padding: 2px !important;
+}
+
+.record-area .file-link-area .copy-paste-div input{
+    outline: none !important;
+    text-decoration: none !important;
+    padding: 8px !important;
+    min-width: 180px !important;
+}
+
+.recording{
+    content: url("https://img.icons8.com/ios-filled/50/000000/microphone--v1.png") !important;
+}
+
+.main .call-to-action{
+    min-width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 80px !important;
+}
+
+.cancel-record-area{
+    position: absolute !important;
+    top: 2% !important;
+    left: 95% !important;
+    cursor: pointer !important;
+}

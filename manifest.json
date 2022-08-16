@@ -1,0 +1,61 @@
+{
+
+    "manifest_version": 2,
+    "name": "VoisaScript",
+    "version": "1.0.0",
+  
+    "description": "Record and Play audio comments.",
+  
+    "icons": {
+      "48": "icons/V2-2.png"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.github.com/*", "*://*.gitlab.com/*", "*://*.icons8.com/*"],
+        "js": [
+            "browser-polyfill.js",
+            "content/VoisaScript.js"
+        ],
+        "run_at": "document_idle",
+        "css": [
+          "/css/link-convert.css",
+          "/css/record-audio.css"
+        ]
+      }
+    ],
+
+    "background": {
+      "scripts": [
+        "browser-polyfill.js",
+        "background/background.js",
+        "background/webRequest.js"
+      ]
+    },
+
+    "browser_action": {
+      "browser_style": true,
+      "default_icon": {
+        "16": "icons/Voisascript 1-1(16).png",
+        "32": "icons/Voisascript 1-1(32).png"
+      },
+      "default_title": "VoisaScript",
+      "default_popup": "popup/popup.html"      
+    },
+    
+    "permissions": [
+      "webRequest",
+      "contextMenus",
+      "storage",
+      "tabs",
+      "webRequestBlocking",
+      "<all_urls>",
+      "browsingData" 
+    ],
+
+    "web_accessible_resources": [
+      "/icons/*"
+    ]
+  
+  }
+  

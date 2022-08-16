@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src *;font-src *; script-src-elem *; img-src * data: https:; style-src * ; script-src *">
+    <title>pop-up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./notie.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Edu+VIC+WA+NT+Beginner:wght@400;500;600;700&family=Lobster&family=Mochiy+Pop+One&family=Rajdhani:wght@300;400;500;600;700&family=Righteous&family=Satisfy&display=swap" rel="stylesheet">
+    <script src="popup.js" defer></script>
+    <script src="./notie.js" defer></script>
+    <script src="../browser-polyfill.js" ></script>
+</head>
+<body>
+    <section class="main">
+        <div class="salutation">
+            <h3>Hi <span>User</span></h3>
+        </div>
+        <div class="stats">
+            <div class="statbox">
+                <div class="statnumber"><h2>9</h2></div>
+                <div class="statitem"><h4>Projects</h4></div>
+            </div>
+            <div class="statbox">
+                <div class=""></div>
+                <div class=""></div>
+            </div>
+            <div class="statbox">
+                <div class="statnumber"><h2>35</h2></div>
+                <div class="statitem"><h4>Audio Files</h4></div>
+            </div>
+        </div>
+        <!-- <div class="call-to-action">
+            <button id="call-to-action-btn">create recording</button>
+        </div> -->
+    </section>
+    <section class="file-action">
+        <div class="upload-header">
+            <h3>Record VoisaScript Audio</h3>
+        </div>
+        <div class="file-upload-form">
+            <form action="" method="post" id="file-upload-form">
+                <div class="choose-project-div">
+                    <select name="project" id="choose-project">
+                        <option value="">Choose Project</option>
+                    </select>
+                    <div class="or-divider">OR</div>
+                    <button id="create-project">create new project</button>
+                </div>
+                <div class="project-create hidden" id="project-create">
+                    <input type="text" name="new-project-name" id="project-name" placeholder="Project Name" disabled>
+                    <input type="text" name="new-project-desc" id="project-desc" placeholder="Project Description" disabled>
+                </div>
+                <div class="record-audio">
+                    <button id="audio-mic">
+                        <div class="button-logo">.</div>
+                        <p class="">Record Audio</p>
+                        <div class="animated-bars hidden">
+                            <div class="bar up-down"></div>
+                            <div class="bar up-down"></div>
+                            <div class="bar up-down"></div>
+                            <div class="bar up-down"></div>
+                            <div class="bar up-down"></div>
+                            <div class="bar up-down"></div>
+                        </div>
+                    </button>
+                    <button type="submit" id="save-button" class="" disabled>save</button>
+                </div>
+                <div class="file-holder hidden">
+                    <button class="choose-file-btn" id="choose-file-btn">Choose File<p></p></button>
+                    <button class="upload-btn hidden" id="upload-btn">Upload</button>
+                    <input type="file" name="audio" id="audio-file-holder" class="" accept="audio/mp3" hidden>
+                </div>
+            </form>
+        </div>
+        <div class="file-link-area">
+            <div class="copy-paste-heading">
+                <h4>copy audio-file link to clipboard</h4>
+            </div>
+            <div class="copy-paste-div">
+                <button class="copy-button" id="copy-button"><img src="https://img.icons8.com/material-rounded/24/000000/copy.png" alt="" srcset=""></button>
+                <input type="text" name="copy-input" id="copy-input" class="copy-input">
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="curve">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z" class="shape-fill"></path>
+            </svg>
+        </div>        
+        <div>
+            <p>copyright VoisaScript.com</p>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,311 @@
+*{
+    box-sizing: initial !important;
+}
+
+.cont{
+    margin-left: 20px !important;
+    padding: 0 !important;
+    max-height: fit-content !important;
+    display: flex;    
+}
+
+/*
+.anim-block{
+    display: flex !important;    
+    flex-direction: row !important;
+    align-items: center !important;
+    min-width: fit-content !important;
+    min-height: fit-content !important;    
+    margin: 0;
+} 
+
+.audio-controller{
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-evenly !important;
+    min-height: 20pt !important;
+    width: 135pt !important;
+    background-color: #dfd21e !important;
+    border-radius: 50pt !important;    
+}
+
+.hidden{
+    display: none !important;
+}
+
+.v-logo{
+    height: 20px !important;
+    width: 20px !important;
+    padding: 9pt !important;
+    content: url('./icons/Voisascript\ 2-2.png') !important;
+    margin: 2pt !important;
+    background: #dfd21e !important;
+    border-radius: 50px !important;
+    cursor: pointer !important;
+}
+
+.main-anim-container{
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    height: 30px !important;
+    width: 40pt !important;
+    margin-right: 5pt !important;
+    margin-bottom: 3pt !important;
+    margin-left: 5pt !important;        
+}
+
+.bar{
+    height: 10px !important;
+    width: 4px !important;
+    background: #91908b !important;
+    margin: 2px !important;    
+}
+
+@keyframes upDown {
+    0%{height: 5px !important;}
+    50%{height: 15px !important;}
+    100%{height: 5px !important;}
+}
+
+.up-down{
+    animation-name: upDown !important;
+    animation-duration: 0.60s !important;
+    animation-iteration-count: infinite !important;
+}
+
+.bar:nth-child(2){
+    animation-delay: 0.12s !important;
+}
+
+.bar:nth-child(3){
+    animation-delay: 0.24s !important;
+}
+
+.bar:nth-child(4){
+    animation-delay: 0.08s !important;
+}
+
+.bar:nth-child(5){
+    animation-delay: 0.36s !important;
+}
+
+.bar:nth-child(6){
+    animation-delay: 0.48s !important;
+}
+
+.play-button{
+    --player-button-width: 2em !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    width: 100% !important;
+    justify-content: center !important;
+}
+
+.player-button {
+    background-color: transparent !important;
+    border: 0 !important;
+    width: var(--player-button-width) !important;
+    height: var(--player-button-width) !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+}
+
+.player-button svg{
+    position: relative !important;
+    left: -120px !important;
+    top: -20px !important;
+}
+
+.seek-container{
+    --player-button-width: 2em !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    width: 100% !important;
+    justify-content: center !important;
+}
+
+.forward-button, .rewind-button{
+    background-color: transparent !important;
+    border: 0 !important;
+    width: var(--player-button-width) !important;
+    height: var(--player-button-width) !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+}
+
+.time-container{
+    display: flex !important;
+    align-items: center !important;
+    margin: 4pt !important;
+    width: fit-content !important;
+    height: fit-content !important;
+    justify-content: flex-end !important;
+}
+
+.time-container span{
+    display: flex !important;
+    align-items: center !important;        
+}
+
+.time-container span input{
+    background: transparent !important;
+    text-decoration: none !important;
+    padding: 0 !important;
+    width: 20pt !important;
+    height: 20pt !important;
+    border: none !important;
+    font-size: 10pt !important;
+    justify-content: flex-end !important;
+    font-weight: 700 !important;
+} */
+
+
+button{
+    cursor: pointer;
+}
+
+.hover-test-box{
+    display: flex;
+    margin: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.v-logo {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: #bcf537;
+    border-radius: 50px;
+}
+
+
+/* The actual popup (appears on top) */
+.popup-audio {
+    visibility: hidden;
+    width: 160px;
+    background-color: #bcf537;
+    color: #000000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: relative;
+    z-index: 1;
+    bottom: 50px;
+    left: -66px;
+    margin-left: -80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    min-width: 250px;    
+}
+
+/* Popup arrow */
+.popup-audio::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #bcf537 transparent transparent transparent;
+}
+
+.popup-audio div{
+    cursor: pointer;
+}
+
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+.hide{
+    visibility: hidden;
+}
+  
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+  
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+.audio-control{
+    max-height: 30px;
+    max-width: 30px;
+}
+
+.seek-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70px;
+}
+
+.seek-box div {
+    max-height: 30px;
+    max-width: 30px;
+}
+
+.main-anim-container{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 30px;
+    width: 40pt;          
+}
+
+.bar{
+    height: 10px;
+    width: 4px;
+    background: #91908b;
+    margin: 2px;    
+}
+
+@keyframes upDown {
+    0%{height: 5px;}
+    50%{height: 15px;}
+    100%{height: 5px;}
+}
+
+.up-down{
+    animation-name: upDown;
+    animation-duration: 0.60s;
+    animation-iteration-count: infinite;
+}
+
+.bar:nth-child(2){
+    animation-delay: 0.12s;
+}
+
+.bar:nth-child(3){
+    animation-delay: 0.24s;
+}
+
+.bar:nth-child(4){
+    animation-delay: 0.08s;
+}
+
+.bar:nth-child(5){
+    animation-delay: 0.36s;
+}
+
+.bar:nth-child(6){
+    animation-delay: 0.48s;
+}

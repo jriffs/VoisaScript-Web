@@ -1,0 +1,438 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+section{
+    position: relative;
+    min-height: 200px;
+}
+
+button{
+    text-decoration: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* font-family: 'Bree Serif', serif; */
+    /* font-family: 'Edu VIC WA NT Beginner', cursive; */
+    /* font-family: 'Lobster', cursive; */
+    /* font-family: 'Mochiy Pop One', sans-serif; */
+    font-family: 'Rajdhani', sans-serif;
+    /* font-family: 'Righteous', cursive; */
+    /* font-family: 'Satisfy', cursive; */
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+input, select{
+    /* font-family: 'Bree Serif', serif; */
+    /* font-family: 'Edu VIC WA NT Beginner', cursive; */
+    /* font-family: 'Lobster', cursive; */
+    /* font-family: 'Mochiy Pop One', sans-serif; */
+    /* font-family: 'Rajdhani', sans-serif; */
+    font-family: 'Righteous', cursive;
+    /* font-family: 'Satisfy', cursive; */
+}
+
+.hidden{
+    display: none !important;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100px;
+}
+
+.salutation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 100%;
+    min-height: 50px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.salutation h3{
+    min-width: fit-content;
+    /* font-family: 'Bree Serif', serif; */
+    /* font-family: 'Edu VIC WA NT Beginner', cursive; */
+    /* font-family: 'Lobster', cursive; */
+    /* font-family: 'Mochiy Pop One', sans-serif; */
+    /* font-family: 'Rajdhani', sans-serif; */
+    /* font-family: 'Righteous', cursive; */
+    font-family: 'Satisfy', cursive;
+    margin-left: 20px;
+    font-size: 2em;
+}
+
+.salutation h3 span {
+    text-align: center;
+    min-width: fit-content;
+    font-style: italic;
+    color: #0c39cc;
+}
+
+.stats{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    min-width: 100%;
+    flex-wrap: nowrap; 
+}
+
+.stats .statbox{
+    min-height: 100px;
+    min-width: 100px;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow:
+        2.3px 2.2px 2.7px rgba(0, 0, 0, 0.025),
+        5.8px 5.6px 6.9px rgba(0, 0, 0, 0.035),
+        11.9px 11.5px 14.2px rgba(0, 0, 0, 0.045),
+        24.5px 23.7px 29.2px rgba(0, 0, 0, 0.055),
+        67px 65px 80px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+}
+
+.stats .statbox .statnumber{
+   /* font-family: 'Bree Serif', serif; */
+   /* font-family: 'Edu VIC WA NT Beginner', cursive; */
+   /* font-family: 'Lobster', cursive; */
+   /* font-family: 'Mochiy Pop One', sans-serif; */
+   /* font-family: 'Rajdhani', sans-serif; */
+   font-family: 'Righteous', cursive;
+   /* font-family: 'Satisfy', cursive; */
+   font-size: 1.3em;
+   color: #f20732; 
+}
+
+.stats .statbox .statitem{
+    font-family: 'Bree Serif', serif;
+    /* font-family: 'Edu VIC WA NT Beginner', cursive; */
+    /* font-family: 'Lobster', cursive; */
+    /* font-family: 'Mochiy Pop One', sans-serif; */
+    /* font-family: 'Rajdhani', sans-serif; */
+    /* font-family: 'Righteous', cursive; */
+    /* font-family: 'Satisfy', cursive; */
+    color: #0c39cc;
+}
+
+.file-action{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-action .upload-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 100%;
+    padding-left: 20px;
+}
+
+.file-action .upload-header h3{
+    /* font-family: 'Bree Serif', serif; */
+    /* font-family: 'Edu VIC WA NT Beginner', cursive; */
+    font-family: 'Lobster', cursive;
+    /* font-family: 'Mochiy Pop One', sans-serif; */
+    /* font-family: 'Rajdhani', sans-serif; */
+    /* font-family: 'Righteous', cursive; */
+    /* font-family: 'Satisfy', cursive; */
+    font-size: 2em;
+}
+
+.file-action .file-upload-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    min-width: 100%;
+    padding-left: 20px;
+}
+
+#file-upload-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 100%;
+    min-height: 200px;
+}
+
+#file-upload-form .choose-project-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+}
+
+.choose-project-div select{
+    text-decoration: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 150px;
+}
+
+.choose-project-div .or-divider{
+    margin: 0 10px;
+}
+
+.choose-project-div button{
+    background: #f20732;
+    color: #FFFFFF;
+    border: 2px solid #f20732;
+    min-width: 150px;
+}
+
+#file-upload-form .project-create{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+}
+
+#file-upload-form .project-create input{
+    margin: 10px;
+    padding: 5px;
+}
+
+#file-upload-form .record-audio{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+}
+
+.record-audio #audio-mic{
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    margin-left: -15px;
+}
+
+.record-audio #audio-mic .button-logo{
+    content: url('/icons/V2-2.png');
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    /* border: 1px solid #eeeeee; */
+    margin-right: 15px;
+}
+
+.record-audio #audio-mic p{
+    margin-right: 15px;
+}
+
+.record-audio .animated-bars{
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 30px;
+    width: 40pt;
+}
+
+.bar{
+    height: 10px;
+    width: 4px;
+    background: #91908b;
+    margin: 2px;    
+}
+
+@keyframes upDown {
+    0%{height: 5px;}
+    50%{height: 15px;}
+    100%{height: 5px;}
+}
+
+.up-down{
+    animation-name: upDown;
+    animation-duration: 0.60s;
+    animation-iteration-count: infinite;
+}
+
+.bar:nth-child(2){
+    animation-delay: 0.12s;
+}
+
+.bar:nth-child(3){
+    animation-delay: 0.24s;
+}
+
+.bar:nth-child(4){
+    animation-delay: 0.08s;
+}
+
+.bar:nth-child(5){
+    animation-delay: 0.36s;
+}
+
+.bar:nth-child(6){
+    animation-delay: 0.48s;
+}
+
+.record-audio #save-button{
+    background: #0c39cc;
+    color: #FFFFFF;
+    border: 2px solid #0c39cc;
+    min-width: 150px;
+}
+
+.record-audio #save-button:disabled{
+    border: 2px solid #4361c2;
+    background: #4361c2;
+    color: #c6ebd2;
+}
+
+.file-holder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    min-height: 100px;
+}
+
+.file-holder .choose-file-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    text-align: center;
+    background: #f20732;
+    color: #FFFFFF;
+    border: 2px solid #f20732;
+    min-width: 150px;
+}
+
+.file-holder .choose-file-btn p{
+    margin: 0 10px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.file-holder .upload-btn{
+    background: #14ae5c;
+    color: #FFFFFF;
+    border: 2px solid #14ae5c;
+    min-width: 150px;
+}
+
+.file-holder .choose-file-error{
+    background: #eb3d3d;
+    color: #FFFFFF;
+    min-width: fit-content;
+    padding: 10px 5px;
+    margin: 0 5px;
+}
+
+.file-action .file-link-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-action .file-link-area .copy-paste-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-action .file-link-area .copy-paste-heading{
+    margin-bottom: -10px;
+}
+
+.file-action .file-link-area .copy-paste-div button{
+    padding: 2px;
+}
+
+.file-action .file-link-area .copy-paste-div input{
+    outline: none;
+    text-decoration: none;
+    padding: 8px;
+    min-width: 180px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f20732;
+    min-height: 300px;
+}
+
+.curve {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.curve svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 214px;
+}
+
+.curve .shape-fill {
+    fill: #f5f5f5;
+}
+
+.recording{
+    content: url("https://img.icons8.com/ios-filled/50/000000/microphone--v1.png") !important;
+}
+
+.main .call-to-action{
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.main .call-to-action #call-to-action-btn{
+    background: #0c39cc;
+    color: #FFFFFF;
+    border: 2px solid #0c39cc;
+    min-width: 80%;
+    border-radius: 5px;
+    font-size: 1.7em;
+}
+
+
+
+
+
+/* font-family: 'Bree Serif', serif;
+font-family: 'Edu VIC WA NT Beginner', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Mochiy Pop One', sans-serif;
+font-family: 'Rajdhani', sans-serif;
+font-family: 'Righteous', cursive;
+font-family: 'Satisfy', cursive; */
