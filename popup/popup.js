@@ -15,10 +15,69 @@ const copyButton = document.querySelector('#copy-button')
 const linkHolder = document.querySelector('#copy-input')
 const saveFileArea = document.querySelector('.file-holder')
 const fileNameHolder = document.querySelector('#choose-file-btn>p')
-const connect = document.querySelector('#call-to-action-btn')
+const signInArea = document.querySelector('#sign-in-area')
+const signInButton = document.querySelector('#sign-in')
+let project_count = document.querySelector('#projects'),
+files_count = document.querySelector('#files'),
+username = document.querySelector('#username')
 
+checkIfUser()
 
+async function checkIfUser() {
+    const {userData} = await browser.storage.local.get('userData')
+    if (userData) {
+        signInArea.classList.toggle('hidden')
+        fileActionArea.classList.toggle('hidden')
+        await UpdateUI()
+    }
+}
 
+signInButton.addEventListener('click', async(e) => {
+    e.preventDefault()
+    const [tab] = await browser.tabs.query({
+        currentWindow: true,
+        active: true
+    })
+    if (tab.url.split('//')[1].includes('voisascript.com/auth/ext?Bearer=')) {
+        let bearer = tab.url.split('//')[1].split('=')[1]
+        let http = new XMLHttpRequest()
+        http.open('GET', 'http://localhost:5000/auth/ext', true)
+        http.setRequestHeader('Authorization', `Bearer ${bearer}`)
+        http.onreadystatechange = async () => {
+            if (http.readyState == 4 && http.status == 200) {
+                let userData = JSON.parse(http.response)
+                updateUserData(bearer, userData).then(() => {
+                    notie.alert({
+                        type: 1,
+                        text: 'Sign-In Successful 👍',
+                        time: 2
+                    })
+                    checkIfUser()
+                })
+                return 
+            }
+            notie.alert({
+                type: 3,
+                text: `Error ${http.status}: ${http.response}`,
+                time: 2
+            })
+        }
+        http.send()
+        http.onerror = (e) => {
+            notie.alert({
+                type: 3,
+                text: `Error ${http.status}: ${http.response}`,
+                time: 2
+            })
+        }
+        return
+    }
+    notie.alert({
+        type: 3,
+        text: `😭 Sign-In Error: please go to VoisaScript.com for instructions on how to sign-in`,
+        time: 3
+    })
+})
 
 createProjectButton.addEventListener('click', (e)=>{
     e.preventDefault()
@@ -124,17 +183,23 @@ audioFileHolder.addEventListener('input', () => {
     fileNameHolder.textContent = ''
 })
 
-uploadButton.addEventListener('click', (e) => {
+uploadButton.addEventListener('click', async (e) => {
     e.preventDefault()
     let form = document.querySelector('form')
     let data = new FormData(form)
+    const {userData} = await browser.storage.local.get('userData')
+    const {userToken} = userData
     if (validate()) {
         let http = new XMLHttpRequest()
         http.open('POST', 'http://localhost:5000/files/upload', true)
-        http.onreadystatechange = () => {
+        http.setRequestHeader('authorization', `Bearer ${userToken}`)
+        http.onreadystatechange = async () => {
             if (http.readyState == 4 && http.status == 200) {
-                let link = http.response
-                linkHolder.value = link
+                let data = JSON.parse(http.response)
+                linkHolder.value = data.url
+                updateUserData(userToken, data).then(() => {
+                    UpdateUI()
+                })
                 notie.alert({
                     type: 1,
                     text: 'Upload Successful... copy generated link and paste anywhere in your code',
@@ -190,15 +255,19 @@ function validate() {
     let validate = false
     if (project == '') {
         if (newProjectName !== '' && newProjectDesc !== '') {
-            return validate = true
+            validate = true
         }
         return validate
     }
     if (newProjectName == '' && newProjectDesc == '') {
         if (project !== '') {
-            return validate = true
+            validate = true
         }
         return validate
+    }
+    if ((newProjectName !== '' && newProjectDesc !== '') || project !== '') {
+        console.log((newProjectName !== '' && newProjectDesc !== '') || project !== '')
+        validate = true
     }
     return validate
 }
@@ -223,4 +292,37 @@ async function communicateWithContent(message) {
         })
     }
     
+}
+
+async function updateUserData(bearer, Data) {
+    const data = {
+        userToken: bearer,
+        username: Data.username,
+        isLoggedIn: true,
+        projects: Data.projects,
+        stats: {
+            projects: Data.stats.projects,
+            files: Data.stats.files
+        }
+    }
+    await browser.storage.local.set({userData: data})
+}
+
+async function UpdateUI() {
+    console.log('UI being updated')
+    // get data from local storage.
+    const {userData} = await browser.storage.local.get('userData')
+
+    project_count.textContent = userData.stats.projects
+    files_count.textContent = userData.stats.files
+    username.textContent = userData.username
+    // empty projectSelect content 
+    projectSelect.innerHTML = `<option value="">Choose Project</option>`
+    // populate projectSelect with data
+    userData.projects.forEach((project) => {
+        const option = document.createElement('option')
+        option.value = project.projectName
+        option.text = project.projectName
+        projectSelect.appendChild(option)
+    })
 }

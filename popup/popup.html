@@ -18,11 +18,11 @@
 <body>
     <section class="main">
         <div class="salutation">
-            <h3>Hi <span>User</span></h3>
+            <h3>Hi <span id="username">User</span></h3>
         </div>
         <div class="stats">
             <div class="statbox">
-                <div class="statnumber"><h2>9</h2></div>
+                <div class="statnumber" id="projects"><h2>0</h2></div>
                 <div class="statitem"><h4>Projects</h4></div>
             </div>
             <div class="statbox">
@@ -30,7 +30,7 @@
                 <div class=""></div>
             </div>
             <div class="statbox">
-                <div class="statnumber"><h2>35</h2></div>
+                <div class="statnumber" id="files"><h2>0</h2></div>
                 <div class="statitem"><h4>Audio Files</h4></div>
             </div>
         </div>
@@ -38,7 +38,14 @@
             <button id="call-to-action-btn">create recording</button>
         </div> -->
     </section>
-    <section class="file-action">
+    <main id="sign-in-area">
+        <div class="sign-in-area">
+            <div class="input-flex">
+                <button id="sign-in">Sign-In</button>
+            </div>
+        </div>
+    </main>
+    <section class="file-action hidden">
         <div class="upload-header">
             <h3>Record VoisaScript Audio</h3>
         </div>

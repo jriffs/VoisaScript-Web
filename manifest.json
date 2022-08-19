@@ -50,7 +50,8 @@
       "tabs",
       "webRequestBlocking",
       "<all_urls>",
-      "browsingData" 
+      "browsingData",
+      "cookies" 
     ],
 
     "web_accessible_resources": [

@@ -212,7 +212,8 @@ body.addEventListener('mouseover', () => {
         let content = getElementsWithKeyWord()
         changeElement(content)
         audioControl()
-        // console.log('done with changing link to V-audio')
+        body.removeEventListener('mouseover', ()=>{})
+        return
     }   
 })
 
@@ -260,6 +261,7 @@ browser.runtime.onMessage.addListener((request) => {
             return Promise.resolve({recorderState: recorder.state})
             break;
         case 'retreive':
+            console.log(recorder.state)
             return Promise.resolve({recorderState: recorder.state})
             break;
         case 'resume':

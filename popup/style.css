@@ -425,7 +425,36 @@ input, select{
     font-size: 1.7em;
 }
 
+.sign-in-area{
+    min-width: 400px;
+    margin-block: 40px;
+}
 
+.sign-in-area .input-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-in-area .input-flex input{
+    margin: 10px;
+    padding: 5px;
+}
+
+.sign-in-area .input-flex button{
+    background: #0c39cc;
+    color: #FFFFFF;
+    border: 2px solid #0c39cc;
+    min-width: 150px;
+    text-align: center;
+}
+
+.sign-in-area .input-flex button:disabled{
+    border: 2px solid #4361c2;
+    background: #4361c2;
+    color: #c6ebd2;
+}
 
 
 
